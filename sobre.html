@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="components/navbar.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <script src="/components/NavbarComponent.js" defer></script>
+    <script src="/components/Footer.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+
+    <style>
+
+        html,body{
+            overflow-x: hidden;
+        }
+
+        .text-div{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 5%;
+        }
+
+        .text-div h1{
+            font-family: 'Protest Riot', sans-serif;
+            color: var(--green-theme);
+            font-size: 30px;
+        }
+
+        .text-div p{
+            margin: 2%, 10%, 2%, 5%;
+            margin-left: 3%;
+            margin-top: 2%;
+            margin-bottom: 2%;
+            font-size: 1rem;
+
+            font-family: 'Roboto', sans-serif;
+        }
+
+    </style>
+</head>
+<body>
+    <my-navbar></my-navbar>
+    <main>
+        <div class="text-div">
+            <h1>Origem acadêmica</h1>
+            <p>
+                Nosso projeto tem suas raízes em uma atividade extensionista realizada no âmbito acadêmico, onde buscamos estender os benefícios da educação além dos muros da universidade e impactar positivamente a sociedade em que estamos inseridos. O compromisso com a excelência acadêmica e o engajamento comunitário nos impulsionam a desenvolver iniciativas que promovam o aprendizado, a inclusão e o desenvolvimento sustentável.
+            </p>
+        </div>
+        <div class="text-div">
+            <h1>Motivação: amor</h1>
+            <p>
+                Esta ideia nasceu do desejo e da iniciativa de pessoas apaixonadas por animais e movidas pela vontade de fazer a diferença na vida deles. Motivada pelo amor pelos nossos amigos de quatro patas e pela preocupação com o bem-estar dos animais desamparados, surgiu a decisão de criar uma plataforma dedicada à adoção de animais.
+            </p>   
+            <p>
+                Este projeto, desenvolvido com amor e dedicação desde o início, fora criado para entregar uma alternativa que facilitasse a conexão entre animais em busca de um lar e pessoas dispostas a oferecer amor e cuidado a eles.
+                O site é o resultado do comprometimento de quem acredita profundamente na importância da adoção responsável e na transformação positiva que ela pode trazer para a vida dos animais e das pessoas.
+            </p>    
+        </div>
+        <div class="text-div">
+            
+        </div>
+    </main>
+    <my-footer></my-footer>
+</body>
+</html>

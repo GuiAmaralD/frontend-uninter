@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="components/navbar.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <script src="/components/NavbarComponent.js" defer></script>
+    <script src="/components/Footer.js" defer></script>
+    <style>
+        .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Estilos para o filtro */
+        .filtro {
+            flex: 1;
+            margin-right: 20px;
+            margin-left: 12%;
+            padding: 20px;
+        }
+
+        /* Estilos para as categorias do filtro */
+        .especie, .sexo {
+            margin-bottom: 20px;
+        }
+
+        /* Estilos para as checkbox dentro do filtro */
+        .filtro label {
+            display: block;
+            margin-bottom: 5px; /* Adicione um espaçamento entre as opções */
+        }
+
+        /* Estilos para a lista de pets */
+        .lista-pets {
+            flex: 3;
+            padding: 20px;
+        }
+
+        /* Estilos para telas menores (Celulares) */
+        @media screen and (max-width: 767px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .filtro, .lista-pets {
+                width: 90%; /* Defina a largura para 90% da largura máxima da tela */
+                margin: auto; /* Centralize os elementos horizontalmente */
+            }
+        }
+    </style>
+</head>
+<body>
+    <my-navbar></my-navbar>
+    <div class="container">
+        <div class="filtro">
+            <div class="especie">
+                <h3>Espécie</h3>
+                <label><input type="checkbox" name="especie" value="cachorro"> Cachorro</label>
+                <label><input type="checkbox" name="especie" value="gato"> Gato</label>
+                <label><input type="checkbox" name="especie" value="ave"> Ave</label>
+            </div>
+            <div class="sexo">
+                <h3>Sexo</h3>
+                <label><input type="checkbox" name="sexo" value="masculino"> Masculino</label>
+                <label><input type="checkbox" name="sexo" value="feminino"> Feminino</label>
+            </div>
+        </div>
+        <div class="lista-pets">
+            <H1>LISTA</H1>
+        </div>
+    </div>
+    <my-footer></my-footer>
+</body>
+</html>

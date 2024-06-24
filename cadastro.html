@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Cadastro</title>
+    <style>
+        .logo {
+            text-align: center;
+            margin-top: 0px;
+            margin-bottom: -20px;
+        }
+        
+        .logo img {
+            width: 100%; /* Defina a largura da imagem em 100% */
+            height: auto; /* Mantém a proporção original da imagem */
+            max-width: 170px; /* Define uma largura máxima opcional, ajuste conforme necessário */ 
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left">
+            <img src="/assets/cadastro.png" alt="Imagem de Cadastro">
+        </div>
+        <div class="right">
+            <div class="logo">
+                <img src="assets/adotaconquista-green.png" alt="Logo">
+            </div>
+            <div id="register-form" style="display: block">
+                <h2>Cadastre-se</h2>
+                <form onsubmit="submitRegisterForm(event)">
+                    <input type="text" maxlength="55" id="name" placeholder="Nome completo" pattern="[A-Za-zÀ-ú\s]+" required>
+                    <input type="tel" maxlength="16" id="phone" placeholder="Telefone" required>
+                    <input type="email" id="email" placeholder="E-mail" required>
+                    <div class="password-container">
+                        <input type="password" maxlength="30" id="password" name="password" placeholder="Insira a sua senha aqui" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye"></i>
+                    </span>
+                    </div>
+                    <div id="cadastro-error-message" style="display: none; color: red"></div>
+                    <button type="submit">Cadastrar</button>
+                </form>
+                
+                <div class="links">
+                    <a href="login.html">Já possui uma conta?</a>
+                    <a href="esqueci-senha.html">Esqueceu sua senha?</a>
+                </div>
+            </div>
+            <div id="cadastro-success-message" class="cadastro-success-message" style="display: none;">
+                <p>Usuário cadastrado com sucesso!</p>
+                <p><a href="login.html" class="link-cadastro-login" id="login-link">Clique aqui para fazer o login!</a></p>
+            </div>
+        </div>
+    </div>
+    <script src="js/cadastro.js"></script>
+</body>
+</html>

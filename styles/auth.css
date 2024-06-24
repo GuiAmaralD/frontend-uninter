@@ -1,0 +1,189 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    flex: 1;
+    overflow: hidden; /* Adicionado para garantir que a imagem não ultrapasse o contêiner */
+}
+
+.left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta o dimensionamento da imagem para cobrir completamente o contêiner */
+}
+
+.right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+form {
+    max-width: 300px;
+    width: 100%;
+    padding: 5px;
+    background-color: #f4fcfc;
+    border-radius: 10px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--green-theme);
+    color: #fff;
+    border: none;
+    border-radius: 11px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+.logo {
+  text-align: center;
+  margin-top: 0px;
+  margin-bottom: 30px;
+}
+
+.logo img {
+    width: 150%; /* Defina a largura da imagem em 100% */
+    height: auto; /* Mantém a proporção original da imagem */
+    max-width: 150px; /* Define uma largura máxima opcional, ajuste conforme necessário */ 
+}
+
+.password-container {
+    position: relative;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 0;
+    top: 45%;
+    margin-right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #555;
+    font-size: 15px;
+}
+
+.login-error-message {
+    background-color: #ffe4e4; /* Vermelho claro */
+    font-weight: 700;
+    color: #cc0000; /* Vermelho escuro */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    color: #4caade;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: solid;
+    color: #085b77;
+
+}
+
+
+.cadastro-error-message{
+    background-color: #ffe4e4; /* Vermelho claro */
+    font-weight: 700;
+    color: #cc0000; /* Vermelho escuro */
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.cadastro-success-message {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.success-message p {
+    margin: 0;
+    text-align: center;
+}
+
+.success-message a {
+    color: #155724;
+    text-decoration: underline;
+
+}
+
+.link-cadastro-login{
+    color: #0e3e58;
+    text-decoration: none;
+    margin-right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        display: flex; /* Altera para flexbox */
+        flex-direction: column-reverse; /* Coluna com a ordem inversa (direita em cima) */
+    }
+
+    .left {
+        display: none; /* Oculta a div esquerda em telas menores */
+    }
+
+    .right {
+        width: 100%; /* Define a largura da div direita para 100% */
+    }
+
+    .links a {
+        display: block; /* Faz com que os links se comportem como blocos */
+        margin-bottom: 10px; /* Adiciona espaço entre os links */
+    }
+}

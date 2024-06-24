@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="components/navbar.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <script src="/components/NavbarComponent.js" defer></script>
+    <script src="/components/Footer.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+
+    <style>
+        html,body{
+            overflow-x: hidden;
+            font-size: 16px;
+        }
+
+        .faq-box {
+            background-color: #ffffff; /* Cor de fundo claro */
+            border-radius: 10px; /* Borda arredondada */
+            padding: 1.25rem; /* Espaçamento interno */
+            width: 80%; /* Largura da caixa */
+            max-width: 800px; /* Largura máxima da caixa */
+            margin: 3.75rem auto; /* Centraliza horizontalmente e adiciona margem superior */
+        }
+
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .faq-section {
+            margin-bottom: 2.5rem;
+        }
+
+        h2 {
+            color: var(--green-theme);
+            text-align: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+            font-family: 'Protest Riot', sans-serif;
+        }
+
+        ol {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin-bottom: 0.9375rem;
+            font-weight: 900;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        strong {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: var(--green-theme);
+        }
+    </style>
+</head>
+<body>
+    <my-navbar></my-navbar>
+
+    <div class="faq-box">
+        <div class="faq-section">
+            <h2>Sobre o cadastro de animais</h2>
+            <ol>
+                <li><strong>1- Como posso cadastrar um animal para adoção?</strong><br>
+                    Resposta: Para cadastrar um animal para adoção, você precisa criar uma conta em nossa plataforma e preencher o formulário de cadastro de animal com as informações solicitadas.
+                </li>
+                <li><strong>2- Quais informações são necessárias para cadastrar um animal?</strong><br>
+                    Resposta: Para cadastrar um animal, você precisará fornecer detalhes como espécie, sexo, apelido, descrição do animal (idade aproximada, temperamento, breve história etc) e foto.
+                </li>
+                <li><strong>3- Há alguma taxa associada ao cadastro de animal?</strong><br>
+                    Resposta: Não, o cadastro de animal em nossa plataforma é gratuito para todos os usuários.
+                </li>
+                <li><strong>4- Posso editar ou remover o cadastro de um animal após publicá-lo?</strong><br>
+                    Resposta: Sim, você pode fazer alterações ou remover o cadastro de um animal a qualquer momento, acessando a seção de gerenciamento de animais em sua conta.
+                </li>
+                <li><strong>O que devo fazer se meu animal for adotado?</strong><br>
+                    Resposta: Se seu animal for adotado, é importante atualizar seu status no site para que outros usários saibam que ele já encontrou um lar.
+                </li>
+            </ol>
+        </div>
+    
+        <div class="faq-section">
+            <h2>Sobre a adoção de animais</h2>
+            <ol>
+                <li><strong>1- Como posso adotar um animal listado no site?</strong><br>
+                    Resposta: Para adotar um animal, entre em contato diretamente com o tutor responsável pelo animal através das informações de contato fornecidas em seu perfil.
+                </li>
+                <li><strong>2- Quais são os requisitos para adoção de um animal?</strong><br>
+                    Resposta: Os requisitos podem variar dependendo do tutor daquele animal. Entre em contato com o mesmo através das informações fornecidas em seu perfil.
+                </li>
+                <li><strong>3- O que devo fazer se decidir adotar um animal?</strong><br>
+                    Resposta: Se decidir adotar um animal, entre em contato com o tutor responsável pelo animal através das informações de contato fornecidas em seu perfil. Após a aprovação do tutor, você poderá levar o animal para casa.
+                </li>
+                <li><strong>4- Há uma taxa de adoção associada ao processo?</strong><br>
+                    Resposta: Alguns tutores podem cobrar uma taxa de adoção para ajudar a cobrir os custos de cuidados veterinários, alimentação e outras despesas associadas ao animal. Verifique com o tutor sobre as taxas aplicáveis, se houver. Nosso site é inteiramente gratuito.
+                </li>
+            </ol>
+        </div>
+    
+        <div class="faq-section">
+            <h2>Sobre a criação da conta</h2>
+            <ol>
+                <li><strong>1- É obrigatório criar uma conta para acessar os recursos do site?</strong><br>
+                    Resposta: A criação de uma conta é necessária apenas para aqueles que desejam anunciar animais para adoção.
+                </li>
+                <li><strong>2- Quais informações são necessárias para criar uma conta?</strong><br>
+                    Resposta: Para criar uma conta, você precisará fornecer informações básicas, como nome, telefone para contato, endereço de e-mail e senha.
+                </li>
+                <li><strong>3- Como faço para acessar minha conta após criá-la?</strong><br>
+                    Resposta: Após criar sua conta, você pode acessá-la clicando no botão "Entrar" ou "Login" na barra de navegação superior e inserir email e senha cadastrados.
+                </li>
+                <li><strong>4- Posso alterar as informações da minha conta depois de criá-la?</strong><br>
+                    Resposta: Sim, você pode atualizar suas informações de conta a qualquer momento. Basta fazer login na sua conta e acessar a seção de configurações ou perfil para fazer as alterações necessárias.
+                </li>
+                <li><strong>5- Esqueci a minha senha. E agora?</strong><br>
+                    Resposta: Se você esqueceu sua senha, clique no link "Esqueceu a senha?" na página de login e siga as instruções fornecidas para redefinir sua senha. Um e-mail de redefinição será enviado para o endereço de e-mail associado à sua conta.
+                </li>
+            </ol>
+        </div>
+    </div>
+    <my-footer></my-footer>
+</body>
+</html>

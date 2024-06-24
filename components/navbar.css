@@ -1,0 +1,54 @@
+/* Estilos CSS para o navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--green-theme);
+    margin-bottom: 0;
+    height: 100px;
+}
+
+.navbar a {
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 200;
+    font-size: 1.01rem;
+    color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.navbar-left {
+    display: flex; /* Adicionando flex para alinhar os elementos horizontalmente */
+    align-items: center; /* Alinhando os elementos verticalmente ao centro */
+    padding-left: 40px;
+}
+
+
+.navbar-right {
+    display: flex; /* Adicionando flex para alinhar os elementos horizontalmente */
+    align-items: center; /* Alinhando os elementos verticalmente ao centro */
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+
+.navbar-logo{
+    max-width: 150px;
+}
+
+.navbar-logo img {
+    margin-top: 20px;
+    width: 100%;
+    height: auto;
+}
+
+/* Estilos específicos para o Shadow DOM */
+:host {
+    display: block;
+}
+
+/* Reset de margens e paddings para evitar problemas de herança */
+:host, * {
+    margin: 0;
+    padding: 0;
+}

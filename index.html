@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projeto Uninter</title>
+    <link rel="stylesheet" href="components/navbar.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <script src="/components/NavbarComponent.js" defer></script>
+    <script src="/components/Footer.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap" rel="stylesheet">
+    <style>
+        html,body{
+            overflow-x: hidden;
+        }
+
+        /* {border: 1px solid red !important; }*/
+
+        .section {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            padding: 5% 5%;
+        }
+
+        .content{
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: center;
+            box-sizing: border-box;
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+
+        .content h1 {
+            font-family: 'Protest Riot', sans-serif;
+            color: var(--green-theme);
+        }
+
+        .content p {
+            flex: 1; /* Para o texto ocupar todo o espaço restante */
+            font-size: 20px;
+            font-weight: 400;
+            color: rgb(48, 45, 45);
+        }
+
+        .content img {
+            max-width: 45%; /* Ajusta a largura da imagem */
+            flex: 1; /* Faz a imagem ocupar a mesma largura que o texto */
+            margin-right: 20px;
+        }
+
+        .section:nth-child(even) .content img {
+            margin-right: 20px;
+            margin-left: 0;
+        }
+
+        .text-side {
+            flex: 1; /* Para ocupar todo o espaço disponível ao lado da imagem */
+        }
+
+        .text-title h1{
+            margin-top: 0;
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .main-text {
+            max-width: 550px; /* Define a largura máxima da div main-text */
+            margin: 0 auto; /* Centraliza a div na página */
+            /* Outros estilos */
+        }
+
+        .main-text p{
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .btn{
+            height: 40px;
+            border-radius: 10px;
+            background-color: var(--green-theme);
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .btn a{
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: 700;
+            font-size: 20px;
+            color: azure;
+            text-decoration: none;
+            padding: 0 2px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .content {
+                flex-direction: column; /* Altera para layout em coluna em telas menores */
+                align-items: flex-start; /* Alinha o conteúdo à esquerda */
+            }
+
+            .content:nth-child(odd){
+                flex-direction: column-reverse;
+            }
+
+            .content img {
+                max-width: 100%; /* Ajusta a largura da imagem para ocupar toda a largura em telas menores */
+                margin: 20px 0; /* Adiciona espaço acima e abaixo da imagem */
+                max-height: unset;
+            }
+
+            .content p {
+                margin: 20px 0; /* Adiciona espaço acima e abaixo do texto */
+            }
+        }
+
+        @media screen and (max-width: 435px) {
+            .content img {
+                max-width: 90%; /* Reduz a largura máxima da imagem para evitar vãos brancos */
+            }
+        }
+    </style>
+</head>
+<body>
+    <my-navbar></my-navbar>
+
+    <div class="section">
+        <div class="content">
+            <img src="/assets/dogcat1.png" alt="Um gato e um cachorro">
+            <div class="text-side">
+                <div class="text-title">
+                    <h1>boas vindas!</h1>
+                </div>
+                <div class="main-text">
+                    <p>Bem-vindo ao Adota Conquista! Aqui, celebramos o amor e a alegria de encontrar um lar para os nossos amigos peludos.</p>
+                    <p> Acreditamos sinceramente que todo animal de estimação merece um lar aconchegante para sempre, transbordando de calor, carinho e infinitas carícias na barriga. Venha fazer parte dessa jornada de transformação e faça do mundo um lugar melhor.</p>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="text-side">
+                <div class="text-title">
+                    <h1>nosso objetivo</h1>
+                </div>
+                <div class="main-text">
+                    <p>Nosso objetivo no Adota Conquista é facilitar o processo de adoção de animais de estimação, proporcionando uma plataforma onde as pessoas possam encontrar animais adoráveis em busca de um lar amoroso.</p>
+                    <p>Seja anunciando pets para adoção ou procurando por um novo membro peludo para a sua família, estamos aqui para conectar pessoas com corações generosos a animais que precisam de amor e cuidado.</p>
+                </div>
+                <button class="btn">
+                    <a href="sobre.html">Saiba mais</a>
+                </button>
+            </div>
+            <img src="/assets/dogcat2.png" alt="Um gato frajola">
+        </div>
+        <div class="content">
+            <img src="/assets/dogcat3.png" alt="Um cachorro da raça beagle">
+            <div class="text-side">
+                <div class="text-title">
+                    <h1>mude a realidade</h1>
+                </div>
+                <div class="main-text">
+                    <p>Vitória da Conquista enfrenta uma triste realidade: o crescente número de animais abandonados pelas ruas. Em dados mais recentes, estima-se que existem mais de 15 mil peludos abandonados pelas ruas da cidade.</p>
+                    <p>Esses animais, muitas vezes deixados à própria sorte, enfrentam diversas dificuldades para sobreviver, incluindo a fome, a falta de abrigo e os perigos das ruas movimentadas.</p>
+                    <p>Ajude a mudar esta realidade. Um animal a menos na rua é um lar feliz a mais</p>
+                </div>
+                <div>
+                    <span>
+                        <button class="btn">
+                            <a href="quero-adotar.html">Adote um pet</a>
+                        </button>
+                    </span>
+                    <span>
+                        <button class="btn">
+                            <a href="cadastro_adocao.html">Cadastre um pet</a>
+                        </button>
+                    </span>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <my-footer></my-footer>
+</body>
+</html>
