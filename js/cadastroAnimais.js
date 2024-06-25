@@ -73,6 +73,11 @@ function submitForm() {
     var porte = document.getElementById('porte').value;
     var descricao = document.getElementById('descricao').value;
 
+    if (!especie || !sexo || !porte) {
+        alert('Por favor, selecione todas as opções do formulário.');
+        return; // Impede o envio do formulário
+    }
+
     // Coletando as URLs das imagens já adicionadas
     var imageUrls = [];
     var existingImages = document.querySelectorAll('#imagePreviews img');
