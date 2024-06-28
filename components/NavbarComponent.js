@@ -90,7 +90,6 @@ class MyNavbar extends HTMLElement {
                     </div>
 
                     <div id="logged-in" style="display: none;">
-                        <a href="perfil.html">Perfil</a>
                         <a href="index.html" id="logoutLink">Logout</a>
                     </div>
                 </div>

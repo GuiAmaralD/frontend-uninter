@@ -6,63 +6,47 @@ function previewImages(event) {
         return; // Se não houver arquivos, sair da função
     }
 
-    // Iterar sobre cada arquivo
-    for (var i = 0; i < files.length; i++) {
-        var file = files[i];
+    var file = files[0]; // Acessa apenas o primeiro arquivo
 
-        // Verificar se é um Blob válido
-        if (!(file instanceof Blob)) {
-            console.error('O arquivo não é um Blob válido:', file);
-            continue; // Passar para o próximo arquivo
-        }
-
-        var reader = new FileReader();
-
-        reader.onload = (function(image) {
-            return function(event) {
-                var imageUrl = event.target.result;
-
-                var imageDiv = document.createElement('div');
-                imageDiv.classList.add('image-preview');
-
-                var img = document.createElement('img');
-                img.src = imageUrl;
-
-                img.onclick = function () {
-                    var zoomedImage = document.createElement('img');
-                    zoomedImage.src = imageUrl;
-                    zoomedImage.classList.add('zoomed-image');
-                    document.body.appendChild(zoomedImage);
-
-                    // Adiciona evento de clique para fechar a visualização em zoom
-                    zoomedImage.onclick = function () {
-                        document.body.removeChild(zoomedImage);
-                    };
-                };
-
-                var deleteIcon = document.createElement('div');
-                deleteIcon.classList.add('delete-icon');
-                deleteIcon.innerHTML = '&#10006;';
-
-                deleteIcon.onclick = function () {
-                    imageDiv.remove();
-                };
-                imageDiv.onmouseover = function () {
-                    deleteIcon.style.display = 'block';
-                };
-
-                imageDiv.onmouseout = function () {
-                    deleteIcon.style.display = 'none';
-                };
-
-                imageDiv.appendChild(img);
-                imageDiv.appendChild(deleteIcon);
-                previewContainer.appendChild(imageDiv);
-            };
-        })(file);
-
-        reader.readAsDataURL(file);
+    // Verificar se é um Blob válido
+    if (!(file instanceof Blob)) {
+        console.error('O arquivo não é um Blob válido:', file);
+        return; // Sair da função se o arquivo não for válido
     }
+
+    var reader = new FileReader();
+
+    reader.onload = function(event) {
+        var imageUrl = event.target.result;
+
+        var imageDiv = document.createElement('div');
+        imageDiv.classList.add('image-preview');
+
+        var img = document.createElement('img');
+        img.src = imageUrl;
+
+        var deleteIcon = document.createElement('div');
+        deleteIcon.classList.add('delete-icon');
+        deleteIcon.innerHTML = '&#10006;';
+
+        deleteIcon.onclick = function () {
+            imageDiv.remove();
+        };
+        imageDiv.onmouseover = function () {
+            deleteIcon.style.display = 'block';
+        };
+
+        imageDiv.onmouseout = function () {
+            deleteIcon.style.display = 'none';
+        };
+
+        imageDiv.appendChild(img);
+        imageDiv.appendChild(deleteIcon);
+        previewContainer.innerHTML = ''; // Limpa as pré-visualizações antigas
+        previewContainer.appendChild(imageDiv);
+    };
+
+    reader.readAsDataURL(file);
 }
 
 function submitForm() {
@@ -73,35 +57,29 @@ function submitForm() {
     var porte = document.getElementById('porte').value;
     var descricao = document.getElementById('descricao').value;
 
-    if (!especie || !sexo || !porte) {
-        alert('Por favor, selecione todas as opções do formulário.');
-        return; // Impede o envio do formulário
+    var input = document.getElementById('imagens');
+    var file = input.files[0]; // Acessa apenas o primeiro arquivo selecionado
+
+    if (!especie || !sexo || !porte || !file) {
+        alert('Por favor, preencha todas as opções do formulário e selecione uma imagem.');
+        return; // Impede o envio do formulário se algum campo estiver faltando
     }
 
-    // Coletando as URLs das imagens já adicionadas
-    var imageUrls = [];
-    var existingImages = document.querySelectorAll('#imagePreviews img');
-    existingImages.forEach(function(existingImage) {
-        imageUrls.push(existingImage.src);
-    });
-
-    // Montando o objeto de dados a ser enviado como JSON
-    var data = {
-        especie: especie,
-        apelido: apelido,
-        sexo: sexo,
-        porte: porte,
-        descricao: descricao,
-        imagens: imageUrls  // Envie as URLs das imagens, se necessário
-    };
+    var formData = new FormData();
+    formData.append('specie', especie);
+    formData.append('nickname', apelido);
+    formData.append('sex', sexo);
+    formData.append('size', porte);
+    formData.append('description', descricao);
+    formData.append('image', file);
 
     // Enviando a requisição POST usando fetch
-    fetch('http://localhost:8080/pet', {
+    fetch('https://sistema-adocao-uninter.onrender.com/pet', {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
         },
-        body: JSON.stringify(data)
+        body: formData
     })
     .then(function(response) {
         if (!response.ok) {

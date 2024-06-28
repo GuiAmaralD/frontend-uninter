@@ -22,7 +22,7 @@ function submitLoginForm(event) {
       password: password
   };
 
-  var url = 'http://localhost:8080/auth/login';
+  var url = 'https://sistema-adocao-uninter.onrender.com/auth/login';
   
   var requestOptions = {
       method: 'POST',

@@ -26,7 +26,7 @@ function submitRegisterForm(event) {
         password: password
     };
   
-    var url = 'http://localhost:8080/auth/register';
+    var url = 'https://sistema-adocao-uninter.onrender.com/auth/register';
     
     var requestOptions = {
         method: 'POST',
