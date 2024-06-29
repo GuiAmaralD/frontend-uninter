@@ -22,7 +22,8 @@ function submitLoginForm(event) {
       password: password
   };
 
-  var url = 'https://sistema-adocao-uninter.onrender.com/auth/login';
+  //var url = 'https://sistema-adocao-uninter.onrender.com/auth/login';
+  var url = 'https://sistema-adocao-uninter.onrender.com/auth/login'
   
   var requestOptions = {
       method: 'POST',

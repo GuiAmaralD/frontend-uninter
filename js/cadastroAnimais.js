@@ -71,13 +71,27 @@ function submitForm() {
     formData.append('sex', sexo);
     formData.append('size', porte);
     formData.append('description', descricao);
-    formData.append('image', file);
+    formData.append('file', file);
+
+    // Recuperando o token do localStorage
+    var token = localStorage.getItem('token');
+    if (!token) {
+        alert('Token não encontrado. Por favor, faça login.');
+        return;
+    }
+
+    var submitButton = document.querySelector('button[onclick="verificarLoginEEnviar()"]');
+    submitButton.disabled = true;
+
+    document.body.style.cursor = 'wait';
 
     // Enviando a requisição POST usando fetch
-    fetch('https://sistema-adocao-uninter.onrender.com/pet', {
+    var url = 'https://sistema-adocao-uninter.onrender.com/pet';
+
+    fetch(url, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json',
+            'Authorization': 'Bearer ' + token
         },
         body: formData
     })
@@ -85,15 +99,64 @@ function submitForm() {
         if (!response.ok) {
             throw new Error('Erro ao registrar o pet.');
         }
+        if (response.status === 204 || response.headers.get('content-length') === '0') {
+            return null; // Sem conteúdo na resposta
+        }
         return response.json();
     })
     .then(function(data) {
         alert('Pet registrado com sucesso!');
         // Limpar o formulário ou redirecionar para outra página, se necessário
         document.getElementById('petForm').reset();
-        document.getElementById('imagePreviews').innerHTML = ''; // Limpar as pré-visualizações de imagem
+        mostrarMensagemSucesso('Animal registrado com sucesso!');
+       
     })
     .catch(function(error) {
         alert('Erro ao registrar o pet: ' + error.message);
+    })
+    .finally(function() {
+        // Reativar o botão de envio
+        submitButton.disabled = false;
     });
+}
+
+function mostrarMensagemSucesso(mensagem) {
+    // Remover o formulário da tela
+    var container = document.querySelector('.container');
+    container.innerHTML = ''; // Limpa o conteúdo do container
+
+    // Criar o círculo com o V no meio e a mensagem de sucesso
+    var sucessoDiv = document.createElement('div');
+    sucessoDiv.style.display = 'flex';
+    sucessoDiv.style.flexDirection = 'column';
+    sucessoDiv.style.alignItems = 'center';
+    sucessoDiv.style.justifyContent = 'center';
+    sucessoDiv.style.height = '100%';
+
+    var circulo = document.createElement('div');
+    circulo.style.width = '100px';
+    circulo.style.height = '100px';
+    circulo.style.borderRadius = '50%';
+    circulo.style.backgroundColor = '#d4edda';
+    circulo.style.display = 'flex';
+    circulo.style.alignItems = 'center';
+    circulo.style.justifyContent = 'center';
+    circulo.style.marginBottom = '20px';
+
+    var checkMark = document.createElement('div');
+    checkMark.innerHTML = '&#10003;'; // Código HTML para o símbolo de checkmark
+    checkMark.style.fontSize = '50px';
+    checkMark.style.color = '#28a745';
+
+    var mensagemDiv = document.createElement('div');
+    mensagemDiv.innerText = mensagem;
+    mensagemDiv.style.fontFamily = 'Roboto, sans-serif';
+    mensagemDiv.style.fontSize = '18px';
+    mensagemDiv.style.color = '#155724';
+
+    circulo.appendChild(checkMark);
+    sucessoDiv.appendChild(circulo);
+    sucessoDiv.appendChild(mensagemDiv);
+
+    container.appendChild(sucessoDiv);
 }
