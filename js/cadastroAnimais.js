@@ -117,6 +117,7 @@ function submitForm() {
     .finally(function() {
         // Reativar o botão de envio
         submitButton.disabled = false;
+        document.body.style.cursor = 'default';
     });
 }
 

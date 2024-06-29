@@ -22,6 +22,8 @@ function submitLoginForm(event) {
       password: password
   };
 
+  document.body.style.cursor = 'wait';
+
   //var url = 'https://sistema-adocao-uninter.onrender.com/auth/login';
   var url = 'https://sistema-adocao-uninter.onrender.com/auth/login'
   
@@ -55,7 +57,10 @@ function submitLoginForm(event) {
       })
       .catch(error => {
           console.error('Erro ao fazer a requisição:', error);
-      });
+      })
+      .finally(function(){
+        document.body.style.cursor = 'default';
+      })
     
 }
 

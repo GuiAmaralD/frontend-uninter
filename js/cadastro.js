@@ -35,6 +35,8 @@ function submitRegisterForm(event) {
         },
         body: JSON.stringify(formData)
     };
+
+    document.body.style.cursor = 'wait';
   
     console.log('Dados a serem enviados para registro:', formData);
   
@@ -53,6 +55,9 @@ function submitRegisterForm(event) {
         .catch(error => {
             console.error('Erro ao fazer a requisição:', error);
             alert(error.message);
+        })
+        .finally(function(){
+            document.body.style.cursor = 'default';
         });
       
   }
