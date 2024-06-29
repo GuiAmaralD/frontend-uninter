@@ -105,7 +105,6 @@ function submitForm() {
         return response.json();
     })
     .then(function(data) {
-        alert('Pet registrado com sucesso!');
         // Limpar o formulário ou redirecionar para outra página, se necessário
         document.getElementById('petForm').reset();
         mostrarMensagemSucesso('Animal registrado com sucesso!');
