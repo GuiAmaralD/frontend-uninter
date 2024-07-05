@@ -24,7 +24,6 @@ function submitLoginForm(event) {
 
   document.body.style.cursor = 'wait';
 
-  //var url = 'https://sistema-adocao-uninter.onrender.com/auth/login';
   var url = 'https://sistema-adocao-uninter.onrender.com/auth/login'
   var localurl = 'http://localhost:8080/auth/login'
   

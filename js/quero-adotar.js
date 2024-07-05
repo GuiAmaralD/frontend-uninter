@@ -1,4 +1,5 @@
 const baseUrl = 'https://sistema-adocao-uninter.onrender.com';
+const localbaseUrl = 'http://localhost:8080'
 
 async function fetchAllAnimals() {
     try {
@@ -38,7 +39,7 @@ function displayAnimals(animals) {
         animalCard.classList.add('animal-card');
 
         const animalImage = document.createElement('img');
-        animalImage.src = `${baseUrl}/uploads/petimages/${animal.imagePath}`;
+        animalImage.src = `${baseUrl}/static/images/${animal.imagePath}`;
         animalImage.alt = 'Imagem do animal';
         animalCard.appendChild(animalImage);
 
