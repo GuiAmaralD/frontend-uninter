@@ -3,7 +3,7 @@ const localbaseUrl = 'http://localhost:8080';
 
 async function fetchAllAnimals() {
     try {
-        const response = await fetch(`${localbaseUrl}/pet`);
+        const response = await fetch(`${baseUrl}/pet`);
         const animals = await response.json();
         console.log('Animais recebidos:', animals); // Log para verificar os dados recebidos
         displayAnimals(animals);

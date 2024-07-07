@@ -37,7 +37,7 @@ function submitLoginForm(event) {
 
   console.log('Dados a serem enviados:', formData);
 
-  fetch(localurl, requestOptions)
+  fetch(url, requestOptions)
       .then(response => {
         if (response.ok) {
             document.getElementById('login-error-message').innerHTML = '';

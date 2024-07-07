@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     async function fetchAnimalDetails(animalId) {
         const baseUrl = 'https://sistema-adocao-uninter.onrender.com'; // Substitua pela sua URL de backend
         const localbaseUrl = 'http://localhost:8080'
-        const url = `${localbaseUrl}/pet/${animalId}`;
+        const url = `${baseUrl}/pet/${animalId}`;
 
         try {
             const response = await fetch(url);

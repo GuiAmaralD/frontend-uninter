@@ -89,7 +89,7 @@ function submitForm() {
     var url = 'https://sistema-adocao-uninter.onrender.com/pet';
     var localurl = 'http://localhost:8080/pet'
 
-    fetch(localurl, {
+    fetch(url, {
         method: 'POST',
         headers: {
             'Authorization': 'Bearer ' + token
