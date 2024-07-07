@@ -57,10 +57,6 @@ function displayAnimals(animals) {
         animalName.textContent = animal.nickname;
         animalCard.appendChild(animalName);
 
-        const animalDescription = document.createElement('p');
-        animalDescription.textContent = animal.description;
-        animalCard.appendChild(animalDescription);
-
         // Adicionar evento de clique para redirecionar para animal.html com o ID do animal
         animalCard.addEventListener('click', () => redirectToAnimalPage(animal.id));
 
