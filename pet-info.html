@@ -1,0 +1,109 @@
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Informações do Animal</title>
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="components/navbar.css">
+    <link rel="stylesheet" href="styles/variables.css">
+    <script src="/components/NavbarComponent.js" defer></script>
+    <script src="/components/Footer.js" defer></script>
+    <script type="module" src="/js/pet-info.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .animal-display {
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 20px;
+            margin: 20px auto;
+            width: 90%;
+            border-radius: 2%;
+            max-width: 1000px;
+        }
+        .animal-img {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .animal-img img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+        }
+        .animal-info-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza verticalmente o conteúdo */
+            align-items: center; /* Centraliza horizontalmente o conteúdo */
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            margin-left: 20px;
+            flex: 1;
+        }
+        .animal-info-container h2 {
+            margin-top: 0;
+            font-size: 34px;
+            font-family: 'Markazi Text', sans-serif;
+            color: var(--green-theme);
+        }
+        .animal-info-container p {
+            margin: 10px 0;
+            font-size: 16px;
+            color: #555;
+            text-align: center; /* Centraliza o texto */
+            font-weight: 550;
+        }
+
+        .animal-description {
+            text-align: center;
+        }
+        .owner-info {
+            background-color: #f4f4f4;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+            width: 100%; /* Garante que a largura seja 100% */
+            text-align: center; /* Centraliza o conteúdo */
+        }
+        @media (max-width: 768px) {
+            .animal-display {
+                flex-direction: column;
+                align-items: center;
+            }
+            .animal-info-container {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <my-navbar></my-navbar>
+    <div class="animal-display">
+        <div class="animal-img">
+            <!-- Imagem do animal -->
+        </div>
+        <div class="animal-info-container">
+            <div class="animal-infos">
+            </div>
+            <div class="owner-info">
+            </div>
+        </div>
+    </div>
+    <my-footer></my-footer>
+</body>
+</html>
