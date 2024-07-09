@@ -13,14 +13,14 @@ async function fetchAllAnimals() {
 }
 
 async function fetchFilteredAnimals() {
-    const species = document.getElementById('species').value;
-    const gender = document.getElementById('gender').value;
+    const specie = document.getElementById('specie').value;
+    const sex = document.getElementById('sex').value;
     const size = document.getElementById('size').value;
 
     try {
-        let url = `${baseUrl}/pet?`;
-        if (species) url += `species=${species}&`;
-        if (gender) url += `gender=${gender}&`;
+        let url = `${baseUrl}/pet/filter?`;
+        if (specie) url += `specie=${specie}&`;
+        if (sex) url += `sex=${sex}&`;
         if (size) url += `size=${size}&`;
 
         const response = await fetch(url.slice(0, -1)); // Remove o último '&'
