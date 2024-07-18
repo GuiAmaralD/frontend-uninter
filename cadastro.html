@@ -39,8 +39,14 @@
                     <div class="password-container">
                         <input type="password" maxlength="30" id="password" name="password" placeholder="Insira a sua senha aqui" required>
                         <span class="toggle-password" onclick="togglePasswordVisibility()">
-                        <i class="fas fa-eye"></i>
-                    </span>
+                            <i class="fas fa-eye"></i>
+                        </span>
+                    </div>
+                    <div class="password-container">
+                        <input type="password" maxlength="30" id="confirm-password" name="confirm-password" placeholder="Confirme a sua senha" required>
+                        <span class="toggle-password" onclick="togglePasswordVisibility('confirm-password')">
+                            <i class="fas fa-eye"></i>
+                        </span>
                     </div>
                     <div id="cadastro-error-message" style="display: none; color: red"></div>
                     <button type="submit">Cadastrar</button>

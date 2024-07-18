@@ -1,7 +1,7 @@
-function togglePasswordVisibility() {
-    var passwordField = document.getElementById('password');
-    var toggleButton = document.querySelector('.toggle-password');
-  
+function togglePasswordVisibility(id = 'password') {
+    var passwordField = document.getElementById(id);
+    var toggleButton = passwordField.nextElementSibling;
+
     if (passwordField.type === 'password') {
         passwordField.type = 'text';
         toggleButton.innerHTML = '<i class="fas fa-eye-slash"></i>';
@@ -9,15 +9,23 @@ function togglePasswordVisibility() {
         passwordField.type = 'password';
         toggleButton.innerHTML = '<i class="fas fa-eye"></i>';
     }
-  }
+}
 
-function submitRegisterForm(event) {
+  function submitRegisterForm(event) {
     event.preventDefault(); // Evita que o formulário seja enviado da maneira padrão
   
     var name = document.getElementById('name').value.trim();
-    var phone = document.getElementById('phone').value.replace(/\D/g, '');;
+    var phone = document.getElementById('phone').value.replace(/\D/g, '');
     var username = document.getElementById('email').value.trim();
     var password = document.getElementById('password').value.trim();
+    var confirmPassword = document.getElementById('confirm-password').value.trim();
+    var errMessage = document.getElementById('cadastro-error-message');
+  
+    if (password !== confirmPassword) {
+        errMessage.style.display = 'block';
+        errMessage.innerHTML = 'As senhas não coincidem. Por favor, tente novamente.';
+        return; // Para o envio do formulário
+    }
   
     var formData = {
         name: name,
@@ -47,7 +55,6 @@ function submitRegisterForm(event) {
                 document.getElementById('cadastro-success-message').style.display = 'block';
             } 
             if (response.status === 409){
-                errMessage = document.getElementById('cadastro-error-message');
                 errMessage.style.display = 'block';
                 errMessage.innerHTML = 'O e-mail já está em uso. Por favor, escolha outro.';
             }
@@ -59,8 +66,7 @@ function submitRegisterForm(event) {
         .finally(function(){
             document.body.style.cursor = 'default';
         });
-      
-  }
+}
 
 var phoneInput = document.getElementById('phone');
 
